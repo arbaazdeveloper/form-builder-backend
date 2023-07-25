@@ -1,11 +1,21 @@
-const express=require('express');
+const express = require('express');
 const createForm = require('../controllers/createForm');
 const getFormById = require('../controllers/getFormById');
 const getAllForms = require('../controllers/getAllForm');
-const router=express.Router();
- 
- router.get('/get-form/:id',getFormById);
- router.get('/get-all-forms',getAllForms);
- router.post('/create-form',createForm);
+const updateForm = require('../controllers/updateForm');
+const saveResponse = require('../controllers/saveResponse');
+const getResponse = require('../controllers/getResponse');
+const router = express.Router();
 
-module.exports=router;
+//get routes 
+router.get('/get-form/:id', getFormById);
+router.get('/get-all-forms', getAllForms);
+router.get('/get-response/:formId',getResponse);
+//post routes
+router.post('/create-form', createForm);
+router.post('/save-response/:formId', saveResponse);
+
+// put routes
+router.put('/update-form/:id', updateForm);
+
+module.exports = router;

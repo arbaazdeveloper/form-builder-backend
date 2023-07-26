@@ -5,6 +5,7 @@ const getAllForms = require('../controllers/getAllForm');
 const updateForm = require('../controllers/updateForm');
 const saveResponse = require('../controllers/saveResponse');
 const getResponse = require('../controllers/getResponse');
+const deleteForm = require('../controllers/deleteForm');
 const router = express.Router();
 
 //get routes 
@@ -18,4 +19,7 @@ router.post('/save-response/:formId', saveResponse);
 // put routes
 router.put('/update-form/:id', updateForm);
 
+
+//delete request
+router.delete('/delete-form/:id',deleteForm)
 module.exports = router;

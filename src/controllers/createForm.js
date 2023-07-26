@@ -5,13 +5,14 @@ const createForm = async (req, res) => {
         if(!req.body){
             return res.status(500).json({error:'body cannot be empty'});
         }
-        console.log(req.body)
-        const f1 = new Form(req.body);
-        const created = await f1.save();
+     
+        const form = new Form(req.body);
+        const created = await form.save();
+       
         return res.status(200).json({message:'form created',form:created})
 
     } catch (error) {
-        console.log(error)
+       
         return res.status(500).json({ error: 'Something Went Wrong' })
     }
 }

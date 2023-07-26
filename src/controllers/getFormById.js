@@ -3,7 +3,7 @@ const Form = require("../models/Form")
 const getFormById = async (req, res) => {
     try {
         const  id  = req.params.id
-        const found = await Form.findById({_id:id })
+        const found = await Form.findById(id)
         if (!found) {
             return res.status(404).json({ message: 'Form Not Found !' })
         }

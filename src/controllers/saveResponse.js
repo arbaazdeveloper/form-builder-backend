@@ -4,8 +4,8 @@ const saveResponse = async (req, res) => {
     try {
         const formId = req.params.formId;
         const { response } = req.body;
-        const r1 = new Response({ formId, response });
-        const savedResponse = await r1.save();
+        const formResponse = new Response({ formId, response });
+        const savedResponse = await formResponse.save();
         return res.status(200).json(savedResponse);
 
     } catch (error) {

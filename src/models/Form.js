@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const formSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
+  image:{type:String},
   createdOn:{type:Date,default:Date.now()},
   elements: [
     {

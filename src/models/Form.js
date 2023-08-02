@@ -10,8 +10,10 @@ const formSchema = new mongoose.Schema({
       type: { type: String, required: true },
       label: { type: String, required: true },
       options: [{ type: String }],
+    
     },
   ],
+  extras:{type:Array}
 });
 
 const Form = mongoose.model('Form', formSchema);

@@ -2,6 +2,7 @@ const Form = require("../models/Form")
 
 const createForm = async (req, res) => {
     try {
+      
         if(!req.body){
             return res.status(500).json({error:'body cannot be empty'});
         }

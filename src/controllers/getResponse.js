@@ -4,7 +4,7 @@ const getResponse = async (req, res) => {
     try {
         const formId=req.params.formId;
 
-        const response = await Response.find({formId})
+        const response = await Response.find({formId}).populate('formId')
 
         if(response.length===0){
             return res.status(404).json({message:'No Response Found For This Form'})

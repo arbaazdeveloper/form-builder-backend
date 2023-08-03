@@ -3,8 +3,8 @@ const Response=require('../models/Responses')
 const saveResponse = async (req, res) => {
     try {
         const formId = req.params.formId;
-        const { response } = req.body;
-        const formResponse = new Response({ formId, response });
+        const { response,extrasResponse } = req.body;
+        const formResponse = new Response({ formId, response,extrasResponse });
         const savedResponse = await formResponse.save();
         return res.status(200).json(savedResponse);
 

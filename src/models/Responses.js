@@ -13,13 +13,17 @@ const formResponseSchema = new mongoose.Schema({
 
 const responseShcema= new mongoose.Schema({
   formId: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Form', 
     required: true,
   },
   response: {
     type: [formResponseSchema], 
     default: [],
+   
   },
+  type:{type:String},
+  extrasResponse:{type:Array}
 });
 const Response=mongoose.model('response',responseShcema)
 module.exports=Response;
